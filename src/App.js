@@ -5,11 +5,10 @@ import './App.css';
 
 class List extends Component {
   render() {
-    const itemNode = this.props.posts.map((item) => {
+    const itemNode = this.props.posts.map(item => {
+			console.log('item', item);
       return (
-        <Item author={item.data.author} key={item._id} >
-          {item.title}
-        </Item>
+        <Item post={item} key={item._id} />
       )
     })
     return <div>{ itemNode }</div>;
@@ -19,14 +18,20 @@ class List extends Component {
 class Item extends React.Component {
   render() {
     return (
-      <div className='redditItem'>
-        <h3>{ this.props.title }</h3>
+      <div>
+        <h3>{ this.props.post.title }</h3>
       </div>
     )
   }
 };
 
 class App extends Component {
+	constructor() {
+    super();
+    this.state = {
+      posts,
+    }
+  };
   render() {
     return (
       <div className="App">
