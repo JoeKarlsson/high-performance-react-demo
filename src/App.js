@@ -6,9 +6,8 @@ import './App.css';
 class List extends Component {
   render() {
     const itemNode = this.props.posts.map(item => {
-			console.log('item', item);
       return (
-        <Item post={item} key={item._id} />
+        <Item post={ item } key={ item._id } />
       )
     })
     return <div>{ itemNode }</div>;
@@ -30,8 +29,30 @@ class App extends Component {
     super();
     this.state = {
       posts,
+			value: '',
     }
+		this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   };
+
+	handleChange(event) {
+		this.setState({value: event.target.value});
+	}
+
+	handleSubmit(event) {
+		event.preventDefault();
+		const { posts, value } = this.state;
+		const newItem = {
+			title: value,
+			_id: Date.now(),
+		}
+		let newArray = posts.slice();
+		newArray.unshift(newItem);
+		this.setState({
+			posts: newArray,
+		})
+	}
+
   render() {
     return (
       <div className="App">
@@ -39,6 +60,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">High Performance React</h1>
         </header>
+
+				<form onSubmit={this.handleSubmit}>
+	        <label>
+	          <input type="text" value={this.state.value} onChange={this.handleChange} />
+	        </label>
+	        <input type="submit" value="Submit" />
+	      </form>
+
         <List posts={this.state.posts} />
       </div>
     );
