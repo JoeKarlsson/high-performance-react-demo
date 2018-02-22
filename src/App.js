@@ -16,6 +16,7 @@ class List extends Component {
 };
 
 class Item extends Component {
+// class Item extends PureComponent {
 
 	// shouldComponentUpdate(nextProps, nextState) {
   //   if (this.props.title !== nextProps.title) {
@@ -34,6 +35,8 @@ class Item extends Component {
 };
 
 class App extends Component {
+// class App extends PureComponent {
+
 	constructor() {
     super();
     this.state = {
