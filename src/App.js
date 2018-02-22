@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import posts from './data.json';
 import logo from './logo.svg';
 import './App.css';
 
 class List extends Component {
+// class List extends PureComponent {
   render() {
     const itemNode = this.props.posts.map(item => {
       return (
@@ -14,7 +15,15 @@ class List extends Component {
   }
 };
 
-class Item extends React.Component {
+class Item extends Component {
+
+	// shouldComponentUpdate(nextProps, nextState) {
+  //   if (this.props.title !== nextProps.title) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
+
   render() {
     return (
       <div>
