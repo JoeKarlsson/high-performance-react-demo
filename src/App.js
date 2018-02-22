@@ -6,9 +6,9 @@ import './App.css';
 class List extends Component {
 // class List extends PureComponent {
   render() {
-    const itemNode = this.props.posts.map(item => {
+    const itemNode = this.props.posts.map((item, idx) => {
       return (
-        <Item post={ item } key={ item._id } />
+        <Item post={ item } key={ idx } />
       )
     })
     return <div>{ itemNode }</div>;
