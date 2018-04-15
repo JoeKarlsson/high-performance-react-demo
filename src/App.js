@@ -4,26 +4,33 @@ import logo from './logo.svg';
 import './App.css';
 
 class List extends Component {
-// class List extends PureComponent {
+	// shouldComponentUpdate(nextProps, nextState) {
+  //   if (this.props.posts[0] !== nextProps.posts[0]) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
+
   render() {
     const itemNode = this.props.posts.map((item, idx) => {
       return (
-        <Item post={ item } key={ idx } />
+        // <Item post={ item } key={ idx } />
+        <Item post={ item } key={ item._id } />
       )
     })
     return <div>{ itemNode }</div>;
   }
 };
 
-class Item extends Component {
-// class Item extends PureComponent {
+// class Item extends Component {
+class Item extends PureComponent {
 
-	// shouldComponentUpdate(nextProps, nextState) {
-  //   if (this.props.title !== nextProps.title) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
+	shouldComponentUpdate(nextProps, nextState) {
+    if (this.props._id !== nextProps._id) {
+      return true;
+    }
+    return false;
+  }
 
   render() {
     return (
@@ -34,9 +41,8 @@ class Item extends Component {
   }
 };
 
-class App extends Component {
-// class App extends PureComponent {
-
+// class App extends Component {
+class App extends PureComponent {
 	constructor() {
     super();
     this.state = {
