@@ -2,7 +2,7 @@
 
 React is built with performance in mind. But when is React slow? In this talk we’ll discuss common bottlenecks in React and when you might be making your program work harder than it should.
 
-Slides: [Building High Performance React Applications](http://slides.com/joekarlsson/high-performance-react#/)
+Slides: [Building High Performance React Applications](https://speakerdeck.com/joekarlsson/building-high-performance-react-applications)
 
 ## Getting Started
 
