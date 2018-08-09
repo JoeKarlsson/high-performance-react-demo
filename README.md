@@ -9,7 +9,7 @@ Slides: [Building High Performance React Applications](http://slides.com/joekarl
 Download and unpack [High Performance React Applications](https://github.com/JoeKarlsson/high-performance-react-demo). Or alternatively checkout from source:
 
     git clone https://github.com/JoeKarlsson/high-performance-react-demo.git
-    cd bechdel-test
+    cd high-performance-react-demo
 
 Next, inside the project, you need to install the project's various NPM dependencies:
 
