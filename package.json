@@ -6,7 +6,7 @@
 		"perf"
 	],
 	"license": "MIT",
-	"homepage": "https://joekarlsson.github.io/high-performance-react-demo/",
+	"homepage": "https://reactperf.joekarlsson.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
